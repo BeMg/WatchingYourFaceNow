@@ -1,22 +1,12 @@
 import cv2
 import numpy as np
-from detectanddraw import detect, draw
+from detectanddraw import detect, draw, face_cascade
 
 
 img = cv2.imread('./data/media/0.jpg', 1)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-cascade_xml = []
-
-cascade_xml.append('./data/haarcascades/haarcascade_frontalface_alt.xml')
-cascade_xml.append('./data/haarcascades/haarcascade_frontalface_alt2.xml')
-cascade_xml.append('./data/haarcascades/haarcascade_frontalface_default.xml')
-cascade_xml.append('./data/haarcascades/haarcascade_frontalface_alt_tree.xml')
-
-cascades = []
-
-for i, xml in enumerate(cascade_xml):
-    cascades.append(cv2.CascadeClassifier(xml))
+cascades = face_cascade()
 
 rects = []
 
