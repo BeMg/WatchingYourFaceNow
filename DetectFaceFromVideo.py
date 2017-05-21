@@ -3,14 +3,14 @@ import numpy as np
 from detectanddraw import detect, draw, face_cascade
 
 
-cap = cv2.VideoCapture('./data/media/CBBC.mp4')
+cap = cv2.VideoCapture(0)
 cascades = face_cascade()
 
 
 while True:
     flag, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    rects = detect(gray, cascades[1])
+    rects = detect(gray, cascades[0])
     print(rects)
     if len(rects) > 0:
         draw(img, rects, (255, 0, 0))
