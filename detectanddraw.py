@@ -20,12 +20,7 @@ def draw(img, rects, color):
 def face_cascade():
     cascade_xml = []
 
-    cascade_xml.append('./data/haarcascades/haarcascade_frontalface_alt.xml')
-    cascade_xml.append('./data/haarcascades/haarcascade_frontalface_alt2.xml')
-    cascade_xml.append(
-        './data/haarcascades/haarcascade_frontalface_default.xml')
-    cascade_xml.append(
-        './data/haarcascades/haarcascade_frontalface_alt_tree.xml')
+    cascade_xml.append('./data/haarcascades/haarcascade_upperbody.xml')
 
     cascades = []
 
