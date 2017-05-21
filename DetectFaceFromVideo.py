@@ -10,7 +10,7 @@ cascades = face_cascade()
 while True:
     flag, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    rects = detect(gray, cascades[0])
+    rects = detect(gray, cascades[2])
     print(rects)
     if len(rects) > 0:
         draw(img, rects, (255, 0, 0))
